@@ -213,6 +213,10 @@ com\.google\.wear\..*
 vendor\.google_clockwork\.displayoffload3
 vendor\.google_clockwork\.displayoffload3\..*
 
+# DerpFest adds
+org.derpfest.*
+vendor.derpfest.*
+
 # Lineage adds
 lineageos\.platform
 org\.lineageos\.platform\.internal

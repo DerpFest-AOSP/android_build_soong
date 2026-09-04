@@ -84,6 +84,15 @@ var (
 		"cortex-a76": []string{
 			"-mcpu=cortex-a76+crypto+crc",
 		},
+		"cortex-a520": []string{
+			"-mcpu=cortex-a520",
+		},
+		"cortex-a720": []string{
+			"-mcpu=cortex-a720",
+		},
+		"cortex-x4": []string{
+			"-mcpu=cortex-x4",
+		},
 		"kryo": []string{
 			"-mcpu=kryo",
 		},
@@ -132,6 +141,9 @@ func init() {
 	pctx.StaticVariable("Arm64Kryo385Cflags", strings.Join(arm64CpuVariantCflags["kryo385"], " "))
 	pctx.StaticVariable("Arm64ExynosM1Cflags", strings.Join(arm64CpuVariantCflags["exynos-m1"], " "))
 	pctx.StaticVariable("Arm64ExynosM2Cflags", strings.Join(arm64CpuVariantCflags["exynos-m2"], " "))
+	pctx.StaticVariable("Arm64CortexA520Cflags", strings.Join(arm64CpuVariantCflags["cortex-a520"], " "))
+	pctx.StaticVariable("Arm64CortexA720Cflags", strings.Join(arm64CpuVariantCflags["cortex-a720"], " "))
+	pctx.StaticVariable("Arm64CortexX4Cflags", strings.Join(arm64CpuVariantCflags["cortex-x4"], " "))
 
 	pctx.StaticVariable("Arm64FixCortexA53Ldflags", "-Wl,--fix-cortex-a53-843419")
 }
@@ -139,16 +151,19 @@ func init() {
 var (
 	arm64CpuVariantCflagsVar = map[string]string{
 		"cortex-a510": "${config.Arm64CortexA510Cflags}",
-		"cortex-a53": "${config.Arm64CortexA53Cflags}",
-		"cortex-a55": "${config.Arm64CortexA55Cflags}",
-		"cortex-a72": "${config.Arm64CortexA53Cflags}",
-		"cortex-a73": "${config.Arm64CortexA53Cflags}",
-		"cortex-a75": "${config.Arm64CortexA55Cflags}",
-		"cortex-a76": "${config.Arm64CortexA76Cflags}",
-		"kryo":       "${config.Arm64KryoCflags}",
-		"kryo385":    "${config.Arm64Kryo385Cflags}",
-		"exynos-m1":  "${config.Arm64ExynosM1Cflags}",
-		"exynos-m2":  "${config.Arm64ExynosM2Cflags}",
+		"cortex-a53":  "${config.Arm64CortexA53Cflags}",
+		"cortex-a55":  "${config.Arm64CortexA55Cflags}",
+		"cortex-a72":  "${config.Arm64CortexA53Cflags}",
+		"cortex-a73":  "${config.Arm64CortexA53Cflags}",
+		"cortex-a75":  "${config.Arm64CortexA55Cflags}",
+		"cortex-a76":  "${config.Arm64CortexA76Cflags}",
+		"kryo":        "${config.Arm64KryoCflags}",
+		"kryo385":     "${config.Arm64Kryo385Cflags}",
+		"exynos-m1":   "${config.Arm64ExynosM1Cflags}",
+		"exynos-m2":   "${config.Arm64ExynosM2Cflags}",
+		"cortex-a520": "${config.Arm64CortexA520Cflags}",
+		"cortex-a720": "${config.Arm64CortexA720Cflags}",
+		"cortex-x4":   "${config.Arm64CortexX4Cflags}",
 	}
 
 	arm64CpuVariantLdflags = map[string]string{

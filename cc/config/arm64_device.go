@@ -90,6 +90,9 @@ var (
 		"cortex-a720": []string{
 			"-mcpu=cortex-a720",
 		},
+		"cortex-a725": []string{
+			"-mcpu=cortex-a725",
+		},
 		"cortex-x4": []string{
 			"-mcpu=cortex-x4",
 		},
@@ -143,6 +146,7 @@ func init() {
 	pctx.StaticVariable("Arm64ExynosM2Cflags", strings.Join(arm64CpuVariantCflags["exynos-m2"], " "))
 	pctx.StaticVariable("Arm64CortexA520Cflags", strings.Join(arm64CpuVariantCflags["cortex-a520"], " "))
 	pctx.StaticVariable("Arm64CortexA720Cflags", strings.Join(arm64CpuVariantCflags["cortex-a720"], " "))
+	pctx.StaticVariable("Arm64CortexA725Cflags", strings.Join(arm64CpuVariantCflags["cortex-a725"], " "))
 	pctx.StaticVariable("Arm64CortexX4Cflags", strings.Join(arm64CpuVariantCflags["cortex-x4"], " "))
 
 	pctx.StaticVariable("Arm64FixCortexA53Ldflags", "-Wl,--fix-cortex-a53-843419")
@@ -163,6 +167,7 @@ var (
 		"exynos-m2":   "${config.Arm64ExynosM2Cflags}",
 		"cortex-a520": "${config.Arm64CortexA520Cflags}",
 		"cortex-a720": "${config.Arm64CortexA720Cflags}",
+		"cortex-a725": "${config.Arm64CortexA725Cflags}",
 		"cortex-x4":   "${config.Arm64CortexX4Cflags}",
 	}
 

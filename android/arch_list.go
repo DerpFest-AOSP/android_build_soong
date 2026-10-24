@@ -120,6 +120,8 @@ var cpuVariants = map[ArchType][]string{
 		"cortex-a720",
 		"cortex-a725",
 		"cortex-x4",
+		"c1-pro",
+		"c1-ultra",
 	},
 	X86:    {},
 	X86_64: {},
